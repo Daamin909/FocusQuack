@@ -1,21 +1,25 @@
-Welcome to DuckDistractions where you can join say DUCK YOU DISTRACTION!
+# FocusQuack! 🦆🦆🦆
 
-Our app presents the following features:
+![MIT License](https://img.shields.io/badge/license-MIT-green.svg)   ![Version 1.0.0](https://img.shields.io/badge/version-1.0.0-blue.svg)
 
-Focus Mode: A small duck located in the bottom right corner of the, which on clicking activates focus mode, it helps you dogde all distractions by going full screen and preventing you from leaving until the timer is done.
+FocusQuack is an anti-distractions web application designed to help users stay productive with tools like a Pomodoro timer, break timers, a to-do list, and analytics. It keeps track of the time spent on various tasks and provides insightful data on productivity.
 
-Pomodoro: Presents the standard pomodoro features.
+## Features 🛠
+- **Pomodoro Timer**: A timer to help you focus in short, productive bursts.
+- **Short and Long Break Timers**: Designed to give you optimal rest intervals.
+- **To-Do List**: Organize your tasks and stay on top of your work.
+- **Analytics**: View statistics on time spent on each timer and on the website.
+- **Persistence**: All tasks and analytics are saved between reloads, ensuring data is not lost.
 
-To-Do List:  Helps you keep track of your daily tasks by adding checking and deleting your tasks.
+### Visit the website: 🌐 [FocusQuack](https://focus-quack.vercel.app)
 
-Analytics: Provides visual and textual analysis based on the time spent in various sections.
+## Usage ⚙️
+No need for installation! Simply go to [FocusQuack](https://focus-quack.vercel.app) and start using the app right away.
 
-We hope you enjoy our app!!
 
+**NOTE:** This project is licensed under the MIT License.
 
-STEPS TO RUN:
-clone the repository.
-install nodejs.
-add nodejs to path.
-in the repo directory run "npm install"
-to start the app run "npm start"
+---
+
+### About Me ⓘ
+I'm Daamin Ashai, a passionate programmer, and creator of FocusQuack. You can check out my personal website at [daamin.tech](https://daamin.tech) for more info about me.
