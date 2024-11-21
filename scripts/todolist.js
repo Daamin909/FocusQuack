@@ -42,8 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   function addTask(tt) {
     const li = document.createElement("li");
-    const taskSpan = document.createElement("span");
+    const taskSpan = document.createElement("div");
     taskSpan.textContent = tt;
+    taskSpan.title = tt;
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.addEventListener("change", toggleComplete);

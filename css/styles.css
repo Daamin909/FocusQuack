@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Graduate:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 body {
   font-family: "Quicksand", sans-serif;
   margin: 0;
@@ -16,6 +20,7 @@ header {
   padding: 10px 10px 0px;
   margin-bottom: 0px;
 }
+
 .logo {
   font-size: 1.5em;
   font-weight: 600;
@@ -209,11 +214,6 @@ header {
   color: #333;
 }
 
-.todo-input input[type="text"]:focus {
-  border-image: linear-gradient(90deg, #4caf50, #81c784) 1;
-  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
-}
-
 .todo-input button {
   padding: 10px 20px;
   background: linear-gradient(90deg, #4caf50, #81c784);
@@ -221,7 +221,11 @@ header {
   border: none;
   cursor: pointer;
 }
+#new-task:focus {
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
 
+  outline: none;
+}
 .todo-input button:hover {
   background: linear-gradient(90deg, #388e3c, #66bb6a);
   transform: scale(1.05);
@@ -233,27 +237,23 @@ header {
 ul#task-list li {
   font-family: "Exo 2", sans-serif;
   font-size: 20px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
   align-items: center;
-  padding: 10px;
-  border-bottom: 2px solid #4caf50;
-  transition: background-color 0.3s ease;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  grid-template-columns: 2fr 10fr 2fr;
+  padding: 8px;
 }
 
-ul#task-list li span {
-  flex: 1;
-  margin-right: 10px;
+ul#task-list li div {
+  width: 95%;
+  text-align: center;
+  word-break: break-all;
   word-wrap: break-word;
-  overflow-wrap: break-word;
+  text-wrap: wrap;
 }
 
 ul#task-list li.completed {
-  color: #999;
+  color: #626060;
   background-color: rgba(76, 175, 80, 0.1);
-  animation: taskCompleteAnimation 0.5s ease;
 }
 
 ul#task-list li:hover {
@@ -279,7 +279,7 @@ ul#task-list li input[type="checkbox"] {
   appearance: none;
   width: 20px;
   height: 20px;
-  border: 2px solid #4caf50;
+  border: 2px solid #4c7faf;
   border-radius: 5px;
   outline: none;
   cursor: pointer;
@@ -288,48 +288,13 @@ ul#task-list li input[type="checkbox"] {
 }
 
 ul#task-list li input[type="checkbox"]:checked {
-  background-color: #4caf50;
+  background-color: #4c7faf;
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18px" height="18px"%3E%3Cpath d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M9 16.2l-3.5-3.5 1.4-1.4 2.1 2.1 5.9-5.9 1.4 1.4L9 16.2z"/%3E%3C/svg%3E');
   background-size: 80%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-ul#task-list li input[type="checkbox"]:checked:before {
-  content: "";
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background-color: rgba(76, 175, 80, 0.3);
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  animation: ripple 0.6s linear;
-}
-
-@keyframes ripple {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 0.5;
-  }
-  100% {
-    width: 300%;
-    height: 300%;
-    opacity: 0;
-  }
-}
-
-@keyframes taskCompleteAnimation {
-  from {
-    background-color: transparent;
-  }
-  to {
-    background-color: rgba(76, 175, 80, 0.1);
-  }
-}
 .container {
   display: flex;
   flex-direction: column;
@@ -662,10 +627,7 @@ ul#task-list li input[type="checkbox"]:checked:before {
 .moving-element {
   animation: float 3s ease-in-out infinite;
 }
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Graduate:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
 #analyticsHeading {
   margin-top: 0;
   font-family: "Raleway", sans-serif;
@@ -752,7 +714,28 @@ ul#task-list li input[type="checkbox"]:checked:before {
   background-color: white !important;
   height: 350px !important;
 }
+.timer-input {
+  font-family: "Montserrat", serif;
+  width: 130px;
+  font-size: 85px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+.minutes-input {
+  text-align: right;
+  width: 150px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 #timeSpentChart {
   margin-top: 10px !important;
   width: 100%;

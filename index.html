@@ -57,14 +57,14 @@
                   <div class="content">
                     <div id="pomodoro-content" class="rab-content active">
                       <div class="timer">
-                        <span id="pomodoro-minutes" contenteditable="true">45</span>:<span id="pomodoro-seconds" contenteditable="true">00</span>
+                        <input type="number" class="timer-input minutes-input" max="180" value="45" min="0" id="pomodoro-minutes" >:<input type="number" class="timer-input seconds-input" max="59" min="0" id="pomodoro-seconds"  value="00" >
                       </div>
                       <button id="start"><i class="fas fa-play"></i> Start</button>
                       <button id="stop"><i class="fas fa-stop" style="margin-right: 4px;"></i>Stop</button>
                     </div>
                     <div id="short-break" class="rab-content">
                       <div class="timer">
-                        <span id="short-break-minutes" contenteditable="true">05</span>:<span id="short-break-seconds" contenteditable="true">00</span>
+                        <input type="number" class="timer-input minutes-input" max="180" value="05" min="0" id="short-break-minutes" >:<input type="number" class="timer-input seconds-input" max="59" min="0" id="short-break-seconds" value="00" >
                       </div>
                       <button id="start-short"><i class="fas fa-play"></i>Start</button>
                       <button id="stop-short"><i class="fas fa-stop" style="margin-right: 4px;"></i>Stop</button>
@@ -72,7 +72,7 @@
                     </div>
                     <div id="long-break" class="rab-content">
                       <div class="timer">
-                        <span id="long-break-minutes" contenteditable="true">15</span>:<span id="long-break-seconds" contenteditable="true">00</span>
+                        <input type="number" class="timer-input minutes-input" max="180" value="15" min="0" id="long-break-minutes" >:<input type="number" class="timer-input seconds-input" max="59" min="0" id="long-break-seconds"  value="00">
                       </div>
                       <button id="start-long"><i class="fas fa-play"></i>Start</button>
                       <button id="stop-long"><i class="fas fa-stop" style="margin-right: 4px;"></i>Stop</button>

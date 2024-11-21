@@ -1,30 +1,7 @@
 var comparativeChart;
-var totalTimeMinutes = 0,
-  pomodoroAnalysisMinutes = 0,
-  shortBreakAnalysisMinutes = 0,
-  longBreakAnalysisMinutes = 0;
-try {
-  totalTimeMinutes = totalTime / 60;
-} catch (err) {
-  totalTimeMinutes = 0;
-}
-try {
-  pomodoroAnalysisMinutes = pomodoroAnalysis / 60;
-} catch (err) {
-  pomodoroAnalysisMinutes = 0;
-}
-try {
-  shortBreakAnalysisMinutes = shortBreakAnalysis / 60;
-} catch (err) {
-  shortBreakAnalysisMinutes = 0;
-}
-try {
-  longBreakAnalysisMinutes = longBreakAnalysis / 60;
-} catch (err) {
-  longBreakAnalysisMinutes = 0;
-}
+
 var paragraphWebsiteAnalysisVariable = `
-        <strong>${0}</strong> Minutes on <strong>DuckDistractions™.</strong><br>
+        <strong>${0}</strong> Minutes on <strong>FocusQuack.</strong><br>
         <strong>${0}</strong> Minutes on <strong>Pomodoro.</strong> <br> 
         <strong>${0}</strong> Minutes on <strong>Short Breaks.</strong> <br>
         <strong>${0}</strong> Minutes on <strong>Long Breaks.</strong> <br>
@@ -71,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
     type: "bar",
     data: {
       labels: [
-        "DuckDistractions",
+        "FocusQuack",
         "Pomodoro Time",
         "Short Break Time",
         "Long Break Time",
@@ -80,10 +57,10 @@ document.addEventListener("DOMContentLoaded", function () {
         {
           label: "Time Spent (minutes)",
           data: [
-            totalTimeMinutes,
-            pomodoroAnalysisMinutes,
-            shortBreakAnalysisMinutes,
-            longBreakAnalysisMinutes,
+            totalTime / 60,
+            pomodoroTime / 60,
+            shortBTime / 60,
+            longBTime / 60,
           ],
           backgroundColor: ["#000000", "#000000", "#000000", "#000000"],
           borderColor: ["white", "white", "white", "white"],
@@ -118,16 +95,16 @@ document.addEventListener("DOMContentLoaded", function () {
   paragraphWebsiteAnalysis.innerHTML = paragraphWebsiteAnalysisVariable;
   setInterval(() => {
     paragraphWebsiteAnalysisVariable = `
-        <strong>${totalTimeMinutes.toFixed(
+        <strong>${(totalTime / 60).toFixed(
           2
-        )}</strong> Minutes on <strong>DuckDistractions™.</strong><br>
-        <strong>${pomodoroAnalysisMinutes.toFixed(
+        )}</strong> Minutes on <strong>FocusQuack.</strong><br>
+        <strong>${(pomodoroTime / 60).toFixed(
           2
         )}</strong> Minutes on <strong>Pomodoro.</strong> <br> 
-        <strong>${shortBreakAnalysisMinutes.toFixed(
+        <strong>${(shortBTime / 60).toFixed(
           2
         )}</strong> Minutes on <strong>Short Breaks.</strong> <br>
-        <strong>${longBreakAnalysisMinutes.toFixed(
+        <strong>${(longBTime / 60).toFixed(
           2
         )}</strong> Minutes on <strong>Long Breaks.</strong> <br>
         <br>
@@ -189,31 +166,11 @@ if (defaultOpenAccordion) {
   }
 }
 setInterval(() => {
-  try {
-    totalTimeMinutes = totalTime / 60;
-  } catch (err) {
-    totalTimeMinutes = 0;
-  }
-  try {
-    pomodoroAnalysisMinutes = pomodoroAnalysis / 60;
-  } catch (err) {
-    pomodoroAnalysisMinutes = 0;
-  }
-  try {
-    shortBreakAnalysisMinutes = shortBreakAnalysis / 60;
-  } catch (err) {
-    shortBreakAnalysisMinutes = 0;
-  }
-  try {
-    longBreakAnalysisMinutes = longBreakAnalysis / 60;
-  } catch (err) {
-    longBreakAnalysisMinutes = 0;
-  }
   comparativeChart.data.datasets[0].data = [
-    totalTimeMinutes,
-    pomodoroAnalysisMinutes,
-    shortBreakAnalysisMinutes,
-    longBreakAnalysisMinutes,
+    totalTime / 60,
+    pomodoroTime / 60,
+    shortBTime / 60,
+    longBTime / 60,
   ];
   comparativeChart.update();
 }, 5 * 1000);
